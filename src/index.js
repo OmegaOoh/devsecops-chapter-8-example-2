@@ -16,6 +16,13 @@ if (!process.env.PORT) {
 const PORT = process.env.PORT;
 
 //
+// HTTP GET route redirect root to live
+//
+app.get("/", (req, res) => {
+  res.redirect("/live");
+});
+
+//
 // HTTP GET route we can use to check if the service is handling requests.
 //
 app.get("/live", (req, res) => {
